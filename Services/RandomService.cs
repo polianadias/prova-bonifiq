@@ -23,7 +23,7 @@ namespace ProvaPub.Services
                 exists = await _ctx.Numbers.AnyAsync(x => x.Number == number);
             }
             while (exists);
-            _ctx.Numbers.Add(new RandomNumber() { Number = number });
+            await _ctx.Numbers.AddAsync(new RandomNumber() { Number = number });
             await _ctx.SaveChangesAsync();
             return number;
         }
