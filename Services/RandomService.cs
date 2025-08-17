@@ -19,7 +19,7 @@ namespace ProvaPub.Services
             bool exists;
             do
             {
-                number = Random.Shared.Next(1000);
+                number = Random.Shared.Next(100);
                 exists = await _ctx.Numbers.AnyAsync(x => x.Number == number);
             }
             while (exists);
